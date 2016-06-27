@@ -1,0 +1,22 @@
+<span id='DiySecurityCode' v-on:click="change()">{{{spanHtml}}}</span>
+
+	char:['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
+	spanText:'',
+	spanHtml:'',
+
+change:function(){
+		var label1 = this.char[Math.floor(Math.random()*62)];
+		var label1Style = Math.floor(Math.random()*45)*(Math.round(Math.random()*1)==1?1:-1);
+		var label2 = this.char[Math.floor(Math.random()*62)];
+		var label2Style = Math.floor(Math.random()*45)*(Math.round(Math.random()*1)==1?1:-1);
+		var label3 = this.char[Math.floor(Math.random()*62)];
+		var label3Style = Math.floor(Math.random()*45)*(Math.round(Math.random()*1)==1?1:-1);
+		var label4 = this.char[Math.floor(Math.random()*62)];
+		var label4Style = Math.floor(Math.random()*45)*(Math.round(Math.random()*1)==1?1:-1);
+		this.spanText = label1+label2+label3+label4;
+		this.spanHtml = 
+		"<label style='transform:rotate("+label1Style+"deg);-webkit-transform:rotate("+label1Style+"deg);-moz-transform:rotate("+label1Style+"deg);-ms-transform:rotate("+label1Style+"deg);-o-transform:rotate("+label1Style+"deg);'>"+label1+"</label>"+
+		"<label style='transform:rotate("+label2Style+"deg);-webkit-transform:rotate("+label2Style+"deg);-moz-transform:rotate("+label2Style+"deg);-ms-transform:rotate("+label2Style+"deg);-o-transform:rotate("+label2Style+"deg);'>"+label2+"</label>"+
+		"<label style='transform:rotate("+label3Style+"deg);-webkit-transform:rotate("+label3Style+"deg);-moz-transform:rotate("+label3Style+"deg);-ms-transform:rotate("+label3Style+"deg);-o-transform:rotate("+label3Style+"deg);'>"+label3+"</label>"+
+		"<label style='transform:rotate("+label4Style+"deg);-webkit-transform:rotate("+label4Style+"deg);-moz-transform:rotate("+label4Style+"deg);-ms-transform:rotate("+label4Style+"deg);-o-transform:rotate("+label4Style+"deg);'>"+label4+"</label>";
+	}
