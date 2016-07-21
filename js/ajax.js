@@ -51,7 +51,8 @@ function ajax(obj) {
 		if (xhr.status == 200) {  //判断http的交互是否成功，200表示成功
 		 	obj.success(xhr.responseText);			//回调传递参数
 		} else {
-		  	alert('获取数据错误！错误代号：' + xhr.status + '，错误信息：' + xhr.statusText);
+			obj.error(xhr.status,xhr.statusText);
+		  	//console.log('获取数据错误！错误代号：' + xhr.status + '，错误信息：' + xhr.statusText);
 		}	
 	}
 }
