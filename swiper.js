@@ -1,13 +1,17 @@
 /*上下滑动事件的监听*/
+//new LSwiperMaker() 注册事件
+
 (function(){ 
     var LSwiperMaker = function(o){ 
  
         var that = this;
-        this.config = o;
+        this.config = o;    //传入的参数
         this.control = false;
-        this.sPos = {};
-        this.mPos = {};
-        this.dire;
+        this.sPos = {};     //开始移动的坐标
+        this.mPos = {};     //移动时的坐标
+        this.dire;          //移动的方向
+        this.tolerance = 40;//容差大小 毕竟触屏很难画直线
+                            //移动各个时间的事件监听
         this.config.bind.addEventListener('touchstart', function(e){ return that.start(e); } ,false);
         this.config.bind.addEventListener('touchmove', function(e){ return that.move(e); } ,false);
         this.config.bind.addEventListener('touchend', function(e){ return that.end(e); } ,false);
@@ -29,23 +33,23 @@
         this.mPos.y = point.screenY;
  
     }
- 
+    //touchEnd 时通过移动的位置来判断方向
     LSwiperMaker.prototype.end = function(e){
 
         if(this.config.dire_h){
         	if(!this.control){
         		this.dire = null;
         	}else{
-        		if(this.mPos.y > this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < 20){
+        		if(this.mPos.y > this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < this.tolerance){
         			this.dire = 'D';
         		}
-        		if(this.mPos.y < this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < 20){
+        		if(this.mPos.y < this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < this.tolerance){
         			this.dire = 'U';
         		}
-        		if(this.mPos.x > this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < 20){
+        		if(this.mPos.x > this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < this.tolerance){
         			this.dire = 'R';
         		}
-        		if(this.mPos.x < this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < 20){
+        		if(this.mPos.x < this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < this.tolerance){
         			this.dire = 'L';
         		}
         	}
@@ -61,55 +65,20 @@
         // e.preventDefault();
     }, false);// 禁止微信touchmove冲突 
 }())
-var li = document.querySelector('.loop > ul:nth-of-type(1)').querySelectorAll('li');
-var dot = document.querySelectorAll('.loop > ul:nth-of-type(2) li');
 var OList = new LSwiperMaker({
         bind:document.querySelector('.loop'),  // 绑定的DOM对象
         dire_h:true,     //true 判断左右， false 判断上下
         backfn:function(o){    //回调事件  
-            if(o.dire == 'L' && i < li.length-1){
-                i++;
-                document.querySelector('.loop > ul:nth-of-type(1)').style.left = '-'+i*100+'%'; 
-                active(i);
-                            
-            }else if(o.dire == 'R' && i > 0){
-                i--;
-                document.querySelector('.loop > ul:nth-of-type(1)').style.left = '-'+i*100+'%';
-                active(i);
+            if(o.dire == 'L'){                
+                // handle()                            
+            }else if(o.dire == 'R'){
+                // handle()
             }else if(o.dire == 'U'){
-                return false;
-                
+                // handle()                
             }else if(o.dire == 'D'){
-                return false;
+                // handle()
             }               
 
         }
 });
-var STimer = setInterval(Sloop,5000);
-var x = 1;
-function Sloop(){  
-    if(i == li.length-1){
-        x = -1;
-    }else
-    if(i == 0){x = 1;}
-    i += x;
-    document.querySelector('.loop > ul:nth-of-type(1)').style.left = '-'+i*100+'%'; 
-    active(i);   
-}
 
-document.querySelector('.loop > ul:nth-of-type(1)').addEventListener('touchstart',function(){
-    clearInterval(STimer);
-});
-document.querySelector('.loop > ul:nth-of-type(1)').addEventListener('touchend',function(){
-    STimer = setInterval(Sloop,5000);
-})
-
-function active(i){
-    for(var x = 0, len = dot.length;x < len; x++){
-        if(x == i){
-            dot[x].setAttribute('class','active');
-        }else{
-            dot[x].setAttribute('class','');
-        }
-    }
-}
