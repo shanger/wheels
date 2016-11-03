@@ -1,0 +1,210 @@
+*{
+	margin:0;padding: 0;box-sizing: border-box;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	display: block;
+}
+.loading1{
+	display: inline-block;width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+.loading1 > li{
+	display: inline-block;
+	height: 50px;width: 8px;
+	border-radius: 2px;
+	background-color: #5d9cec;
+	margin-left: 4px;
+	transition: all  linear;
+	-webkit-transition: all  linear;
+	-moz-transition: all  linear;
+	-ms-transition: all  linear;
+	-o-transition: all  linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+}
+.loading1 > li:nth-child(odd){
+	animation: odd 1.6s linear infinite;
+	-webkit-animation: odd 1.6s linear infinite;
+	-moz-animation: odd 1.6s linear infinite;
+	-ms-animation: odd 1.6s linear infinite;
+	-o-animation: odd 1.6s linear infinite;
+}
+.loading1 > li:nth-child(even){
+	animation: odd 1.6s linear 0.8s  infinite;
+	-webkit-animation: odd 1.6s linear 0.8s infinite;
+	-moz-animation: odd 1.6s linear 0.8s infinite;
+	-ms-animation: odd 1.6s linear 0.8s infinite;
+	-o-animation: odd 1.6s linear 0.8s infinite;
+}
+.loading2{
+	overflow: hidden;
+	margin-top: 50px;
+	text-align: center;
+	height: 200px;position: relative;
+}
+.loading2 > li{
+	display: inline-block;
+	height: 20px;width: 140px;line-height: 20px;
+	background-color: transparent;
+	transition: transform  linear;
+	-webkit-transition: transform  linear;
+	-moz-transition: transform  linear;
+	-ms-transition: transform  linear;
+	-o-transition: transform  linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	position: absolute;
+	top: 90px;left: 50%;margin-left:-70px;
+}
+.loading2 > li>span{
+	float: right;
+	display: inline-block;height: 14px;width: 14px;
+	vertical-align: middle;
+	border-radius: 50%;background-color: rgba(93,156,236,1);
+}
+.loading2 > li:nth-of-type(1){
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	animation: move1 2s linear infinite;
+	-webkit-animation: move1 2s linear infinite;
+	-moz-animation: move1 2s linear infinite;
+	-ms-animation: move1 2s linear infinite;
+	-o-animation: move1 2s linear infinite;
+	border-radius: 50%;
+}
+
+.loading2 > li:nth-of-type(2){
+	transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);
+	-moz-transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
+	-o-transform: rotate(15deg);
+	animation: move2 2s linear infinite;
+	-webkit-animation: move2 2s linear infinite;
+	-moz-animation: move2 2s linear infinite;
+	-ms-animation: move2 2s linear infinite;
+	-o-animation: move2 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(3){
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+
+	animation: move3 2s linear infinite;
+	-webkit-animation: move3 2s linear infinite;
+	-moz-animation: move3 2s linear infinite;
+	-ms-animation: move3 2s linear infinite;
+	-o-animation: move3 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(4){
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+
+	animation: move4 2s linear infinite;
+	-webkit-animation: move4 2s linear infinite;
+	-moz-animation: move4 2s linear infinite;
+	-ms-animation: move4 2s linear infinite;
+	-o-animation: move4 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(5){
+	transform: rotate(60deg);
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+
+	animation: move5 2s linear infinite;
+	-webkit-animation: move5 2s linear infinite;
+	-moz-animation: move5 2s linear infinite;
+	-ms-animation: move5 2s linear infinite;
+	-o-animation: move5 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(6){
+	transform: rotate(75deg);
+	-webkit-transform: rotate(75deg);
+	-moz-transform: rotate(75deg);
+	-ms-transform: rotate(75deg);
+	-o-transform: rotate(75deg);
+
+	animation: move6 2s linear infinite;
+	-webkit-animation: move6 2s linear infinite;
+	-moz-animation: move6 2s linear infinite;
+	-ms-animation: move6 2s linear infinite;
+	-o-animation: move6 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(7){
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+
+	animation: move7 2s linear infinite;
+	-webkit-animation: move7 2s linear infinite;
+	-moz-animation: move7 2s linear infinite;
+	-ms-animation: move7 2s linear infinite;
+	-o-animation: move7 2s linear infinite;
+	border-radius: 50%;
+}
+.loading2 > li:nth-of-type(8){
+	transform: rotate(105deg);
+	-webkit-transform: rotate(105deg);
+	-moz-transform: rotate(105deg);
+	-ms-transform: rotate(105deg);
+	-o-transform: rotate(105deg);
+
+	animation: move8 2s linear infinite;
+	-webkit-animation: move8 2s linear infinite;
+	-moz-animation: move8 2s linear infinite;
+	-ms-animation: move8 2s linear infinite;
+	-o-animation: move8 2s linear infinite;
+	border-radius: 50%;
+}
+
+.loading2 > li:nth-of-type(1)>span{
+	background-color: rgba(93,156,236,0.2);
+}
+.loading2 > li:nth-of-type(2)>span{
+	background-color: rgba(93,156,236,0.3);
+}
+.loading2 > li:nth-of-type(3)>span{
+	background-color: rgba(93,156,236,0.4);
+}
+.loading2 > li:nth-of-type(4)>span{
+	background-color: rgba(93,156,236,0.5);
+}
+.loading2 > li:nth-of-type(5)>span{
+	background-color: rgba(93,156,236,0.6);
+}
+.loading2 > li:nth-of-type(6)>span{
+	background-color: rgba(93,156,236,0.7);
+}
+.loading2 > li:nth-of-type(7)>span{
+	background-color: rgba(93,156,236,0.8);
+}
+.loading2 > li:nth-of-type(8)>span{
+	background-color: rgba(93,156,236,0.9);
+}
