@@ -16,14 +16,19 @@
 	<body id="address">
 		<!--列表-->
 		<label>省份：</label>
-		<select v-on:change="chooseProvinces()" v-model="provinces">
+		<select v-on:change="chooseProvinces()" v-on:click="chooseProvinces()" v-model="provinces" v-el:provinces>
 			<option v-for="item in provincialLevel" v-bind:value="item.id">{{item.title}}</option>
 		</select>
 		<label>城市：</label>
+		<select v-on:change="chooseCity($index)" v-on:click="chooseCity($index)" v-el:city>
+			<option v-for="item in cityList" v-bind:value="$index">{{item}}</option>
+		</select>
+		<label>区县：</label>
 		<select>
-			<option v-for="item in cityList" v-on:click.stop="chooseCity($index)">{{item.title}}</option>
+			<option v-for="item in Lthree" v-on:click.stop="chooseCity($index)">{{item}}</option>
 		</select>
 		<script type="text/javascript" src="vue.min.js"></script>
+		<script type="text/javascript" src="city.js"></script>
 		<script type="text/javascript" src="cityPick.js"></script>
 	</body>
 </html>
