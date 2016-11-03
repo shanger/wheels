@@ -208,3 +208,99 @@ body{
 .loading2 > li:nth-of-type(8)>span{
 	background-color: rgba(93,156,236,0.9);
 }
+
+.loading3{
+	display: inline-block;width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+.loading3 > li{
+	display: inline-block;
+	height: 30px;width: 8px;
+	border-radius: 2px;
+	background-color: #5d9cec;
+	margin-left: 4px;
+	transition: all  linear;
+	-webkit-transition: all  linear;
+	-moz-transition: all  linear;
+	-ms-transition: all  linear;
+	-o-transition: all  linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+}
+.loading3 > li:nth-of-type(1){
+	animation: updown 1s linear infinite;
+	-webkit-animation: updown 1s linear infinite;
+	-moz-animation: updown 1s linear infinite;
+	-ms-animation: updown 1s linear infinite;
+	-o-animation: updown 1s linear infinite;
+}
+.loading3 > li:nth-of-type(2){
+	animation: updown 1s linear 0.2s infinite;
+	-webkit-animation: updown 1s linear 0.2s infinite;
+	-moz-animation: updown 1s linear 0.2s infinite;
+	-ms-animation: updown 1s linear 0.2s infinite;
+	-o-animation: updown 1s linear 0.2s infinite;
+}
+.loading3 > li:nth-of-type(3){
+	animation: updown 1s linear 0.4s infinite;
+	-webkit-animation: updown 1s linear 0.4s infinite;
+	-moz-animation: updown 1s linear 0.4s infinite;
+	-ms-animation: updown 1s linear 0.4s infinite;
+	-o-animation: updown 1s linear 0.4s infinite;
+}
+.loading3 > li:nth-of-type(4){
+	animation: updown 1s linear 0.6s infinite;
+	-webkit-animation: updown 1s linear 0.6s infinite;
+	-moz-animation: updown 1s linear 0.6s infinite;
+	-ms-animation: updown 1s linear 0.6s infinite;
+	-o-animation: updown 1s linear 0.6s infinite;
+}
+.loading3 > li:nth-of-type(5){
+	animation: updown 1s linear 0.8s infinite;
+	-webkit-animation: updown 1s linear 0.8s infinite;
+	-moz-animation: updown 1s linear 0.8s infinite;
+	-ms-animation: updown 1s linear 0.8s infinite;
+	-o-animation: updown 1s linear 0.8s infinite;
+}
+
+.loading4{
+	height: 200px;overflow: hidden;
+}
+.loading4 > div{
+	height: 50px;width: 50px;
+	margin:150px auto;
+	position: relative;
+	transition: all  linear;
+	-webkit-transition: all  linear;
+	-moz-transition: all  linear;
+	-ms-transition: all  linear;
+	-o-transition: all  linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	animation: loading4 1s cubic-bezier(0,0.42,0.58,1) infinite;
+	-webkit-animation: loading4 1s cubic-bezier(0,0.42,0.58,1) infinite;
+	-moz-animation: loading4 1s cubic-bezier(0,0.42,0.58,1) infinite;
+	-ms-animation: loading4 1s cubic-bezier(0,0.42,0.58,1) infinite;
+	-o-animation: loading4 1s cubic-bezier(0,0.42,0.58,1) infinite;
+	transform: rotate(60deg);
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+}
+.loading4 > div:after{
+	display: inline-block;content: '';
+	border-top: 40px solid;border-bottom: 40px solid;
+	border-left: 20px solid;border-right: 20px solid;
+	border-color: transparent transparent #5d9cec transparent;
+	position: absolute;
+	left: 50%;margin-left:-20px;
+	bottom: 10px;
+}
