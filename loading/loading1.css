@@ -6,6 +6,7 @@ html{
 }
 body{
 	display: block;
+	height: 1000px;
 }
 li{
 	list-style: none;
@@ -308,3 +309,19 @@ li{
 	bottom: 10px;
 }
 
+
+.loading6 {
+	text-align: center;
+}
+.loading6 > #loading6{
+	transition: all  linear;
+	-webkit-transition: all  linear;
+	-moz-transition: all  linear;
+	-ms-transition: all  linear;
+	-o-transition: all  linear;
+	animation: loading6 2s  infinite;
+	-webkit-animation: loading6 2s  infinite;
+	-moz-animation: loading6 2s  infinite;
+	-ms-animation: loading6 2s  infinite;
+	-o-animation: loading6 2s  infinite;
+}
