@@ -83,7 +83,7 @@
 	}
 }
 
-@keyframes loading7_1{
+/*@keyframes loading7_1{
 	0%{
 		.transform(rotate(-45deg));
 
@@ -125,7 +125,7 @@
 }
 
 
-/*@keyframes loading7_4{
+@keyframes loading7_4{
 	0%{
 		.transform(rotate(225deg));
 
@@ -137,25 +137,28 @@
 		.transform(rotate(225deg));
 	}
 }*/
-.keyframes(loading7_4);
-.keyframes(@name){
+.keyframes(loading7_1,-45deg,45deg);
+.keyframes(loading7_2,45deg,135deg);
+.keyframes(loading7_3,135deg,225deg);
+.keyframes(loading7_4,225deg,315deg);
+.keyframes(@name,@arg1,@arg2){
 	@-webkit-keyframes @name {
-        .frames()
+        .frames(@arg1,@arg2)
     }
     @-moz-keyframes @name {
-        .frames()
+        .frames(@arg1,@arg2)
     }
     @-o-keyframes @name {
-        .frames()
+        .frames(@arg1,@arg2)
     }
     @-ms-keyframes @name {
-        .frames()
+        .frames(@arg1,@arg2)
     }
     @keyframes @name {
-        .frames()
+        .frames(@arg1,@arg2)
     }
 }
-.frames(){
+/*.frames(@arg1,@arg2){
 	0%{
 		.transform(rotate(225deg));
 
@@ -165,5 +168,17 @@
 	}
 	100%{
 		.transform(rotate(225deg));
+	}
+}*/
+.frames(@arg1,@arg2){
+	0%{
+		.transform(rotate(@arg1));
+
+	}
+	50%{
+		.transform(rotate(@arg2));
+	}
+	100%{
+		.transform(rotate(@arg1));
 	}
 }
