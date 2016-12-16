@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>蜜见</title>
+        <script type="text/javascript">
+        	!function(n,e){var t=n.documentElement,i="orientationchange"in window?"orientationchange":"resize",d=function(){var n=t.clientWidth>640?640:t.clientWidth;n&&(t.style.fontSize=20*(n/320)+"px")};n.addEventListener&&(e.addEventListener(i,d,!1),n.addEventListener("DOMContentLoaded",d,!1))}(document,window);
+        </script>
+        <style type="text/css">
+        	*{
+				margin:0;padding: 0;box-sizing: border-box;
+			}
+			html,body{
+				font-family: "Microsoft Yahei";
+				height: 100%;
+				background-color: #ededed;
+			}
+			.body{
+				max-width: 640px;
+				margin:0 auto;
+				height: 100%;
+				position: relative;
+				overflow:hidden;
+				background-color: 
+			}
+			li{list-style: none;}
+			header{
+				margin-top: 1rem;
+				font-size: 0.7rem;
+				text-align: center;
+				color: #666666;
+			}
+			input{
+				background-color: transparent;color: white;
+				border:none;font-family: "Microsoft Yahei";
+				outline: none;
+			}
+			form {
+				margin-top:1.5rem;
+			}
+			form ul{
+				width: 11.5rem;
+				margin:0 auto;
+				padding: 0 0.25rem;
+			}
+			
+			form ul li{
+				height: 2rem;line-height: 2rem;				
+			}
+			form ul li input{
+				font-family: "Microsoft Yahei";
+				padding-left: 0.25rem;
+				outline: none;
+				display: inline-block;
+				width: 11rem;
+				vertical-align: middle;height: 1.5rem;
+				background-color: #ffffff;
+				border-radius: 4px;
+				border:1px solid #959595;
+			}
+
+			/*验证码*/
+			form ul li >input.YZ{
+				width: 6.5rem;
+			}
+			form ul li >input.YZBtn{
+				height: 1.5rem;line-height: 1.5rem;
+				text-align: center;
+				width: 4.5rem;
+				background-color: #e6264d;
+				border:none;
+				border-radius: 0;
+				color: white;
+			}
+			/*年龄*/
+			form ul li > span.age{
+				display: inline-block;height: 1.5rem;
+				vertical-align: middle;width: 3.25rem;
+				position: relative;
+			}
+			form ul li > span.ageTxt{
+				display: inline-block;height: 1.5rem;line-height: 1.5rem;
+				font-size: 0.45rem;
+				text-indent: 0.6rem;
+			}
+			form ul li > span.age input{
+				width: 3.25rem;
+				vertical-align: top;
+				text-align: left;
+				padding-left: 0.6rem; 
+				color: #666666;
+			}
+			form ul li >span.age:after{
+				content: '';
+				position: absolute;
+				top: 0.6rem;right: 0.4rem;
+				border:0.25rem solid;
+				border-color: #6b6b6b transparent transparent transparent;
+			}
+
+			form >section{
+				text-align: center;
+			}
+			form >section> input{
+				display: inline-block;
+				margin: 0.75rem auto 0;
+				width: 9.675rem;
+				height: 1.925rem;
+				line-height: 1.925rem;text-align: center;
+				background-color: #03b6ee;
+			}
+			.tips{
+				margin-top: 0.2rem;
+			}
+			.tips >p {
+				text-align: center;
+				font-size: 0.45rem;
+				color: #333333;
+				line-height: 1rem;
+			}
+			.tips >p >a{
+				text-decoration: none;
+				color: #03b6ee;
+			}
+			.ageSelect{
+				top: 0;left: 0;
+				position: absolute;width: 100%;height: 100%;
+				background-color: rgba(0,0,0,.6);
+				display: none;
+			}
+			.ageSelect.show{
+				display: block;
+			}
+			.ageSelect > .content{
+				position: absolute;
+				bottom: 0;left: 0;
+				height: 10rem;width: 100%;
+				background-color: white;
+			}
+			.ageSelect > .content ul{
+				height: 10rem;overflow-y: scroll;
+
+			}
+			.ageSelect > .content li{
+				height: 2rem;line-height: 2rem;text-align: center;
+				font-size: 0.75rem;
+			}
+			.ageSelect > .content li:nth-of-type(1){
+				margin-top: 4rem;
+			}
+			.ageSelect > .content span{
+				position: absolute;
+				display: inline-block;
+				left: 50%;margin-left: -2.125rem;
+				top: 4rem;
+				width: 4.25rem;
+				height: 2rem;
+				border-top: 1px solid #03b6ee;
+				border-bottom: 1px solid #03b6ee;
+			}
+			.ageSelect > .content div{
+				position: absolute;
+				width: 100%;
+				height: 1rem;bottom: 0.5rem;left: 0;
+				text-align: right;
+			}
+			.ageSelect > .content div input{
+				display: inline-block;vertical-align: top;
+				font-family: "Microsoft Yahei";
+				width: 2.5rem;font-size:0.6rem;text-align: center;
+				color: #03b6ee;
+				height: 1rem;line-height: 1rem;
+			}
+        </style>
+    </head>
+    <body id='body'>    	
+		<div class="body">
+			<header>注册</header>
+			<form>
+				<ul>
+					<li>
+						<input type="text" name="" placeholder="请输入有效手机号">
+					</li>
+					<li>
+						<input type="text" name="" placeholder="验证码" class="YZ"><input type="button" class="YZBtn" value="获取验证码" />
+					</li>
+					<li>
+						<input type="text" name="" placeholder="设置密码（6~20数字或字母组合）">
+					</li>
+					<li>
+						<input type="text" name="" placeholder="确认密码">
+					</li>
+					<li>
+						<input type="text" name="" placeholder="请输入您的昵称">
+					</li>
+					<li>
+						<span class="age"><input type="button" name="" value="25岁"></span><span class="ageTxt">（请选择您的年龄）</span>
+					</li>
+				</ul>
+				<section>
+					<input type="submit" name="" class="button registBtn" value="注册">
+				</section>
+			</form>
+			<section class="tips">
+				<p>我已阅读并同意<a javascript:void(0)>使用协议</a></p>
+				<p>已有账号<a javascript:void(0)>直接登录</a></p>
+			</section>
+			<section class="ageSelect">
+				<div class="content">
+					<ul>
+						<li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+					</ul>
+					<span></span>
+					<div><input type="button" value="取消" class="cancle"><input type="button" value="确定" class="check"></div>
+				</div>
+				
+			</section>
+    	</div>
+    	<script type="text/javascript">
+    		if(/Android [4-6]/.test(navigator.appVersion)) {
+    			window.addEventListener("resize", function() {
+    				if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+    					window.setTimeout(function() {
+    						document.activeElement.scrollIntoViewIfNeeded();
+    					},0);
+    				}
+    			})
+    		}
+    		var selectAge = document.querySelector('span.age');	//选年龄按钮 span
+    		var selectInp = document.querySelector('span.age > input');//选年龄按钮
+    		var cancle = document.querySelector('input.cancle');	//cancle
+    		var check = document.querySelector('input.check');		//确定
+    		var ageSelect = document.querySelector('section.ageSelect');	//选择层
+    		var ul = document.querySelector('.content ul');
+    		function append(){
+    			var selectUl = document.querySelector('.content ul');
+    			var str = '';
+    			for(var i = 18;i < 83;i++){
+    				if(i>80){
+    					str += '<li></li>'
+    				}else{
+    					str += '<li>'+i+'</li>'
+    				}    				
+    			}
+    			selectUl.innerHTML = str;
+    		}
+    		//选择年龄
+    		selectAge.addEventListener('click',function(ev){
+    			ev.stopPropagation();
+    			ageSelect.setAttribute('class','ageSelect show');
+    			append();
+    			var OList = new LSwiperMaker({
+	                bind:document.querySelector('.content ul'),  // 绑定的DOM对象
+	                bindLi:document.querySelector('.content li').offsetHeight,
+	                dire_h:true,     //true 判断左右， false 判断上下
+	                backfn:function(o){    //回调事件           
+	                    if(o.dire == 'L'){                
+	                         return false;
+	                    }else if(o.dire == 'R'){                            
+	                        return false;
+	                    }else if(o.dire == 'U'){
+	                    	o.config.bind.scrollTop = Math.round(o.config.bind.scrollTop/o.config.bindLi)*o.config.bindLi;    
+	                    }else if(o.dire == 'D'){
+	                        o.config.bind.scrollTop = Math.round(o.config.bind.scrollTop/o.config.bindLi)*o.config.bindLi; 
+	                    }           
+
+	                }
+	            });
+    		},false);
+
+    		//取消选择
+    		cancle.addEventListener('click',function(ev){
+    			ev.stopPropagation();
+    			ageSelect.setAttribute('class','ageSelect');
+    		},false);
+
+    		//选中后    		
+    		check.addEventListener('click',function(ev){
+    			ev.stopPropagation();
+    			var chaZhi = document.querySelector('.content li').offsetHeight;
+    			var Ul = document.querySelector('.content ul').scrollTop;
+    			var index = Math.round(Ul/chaZhi);
+    			console.log(index + 18);
+    			var text = document.querySelectorAll('.content li')[index].innerHTML;
+    			selectInp.value = text + '岁';
+    			ageSelect.setAttribute('class','ageSelect');
+    		},false);
+    		//滑动绑定
+    		(function(){ 
+                var LSwiperMaker = function(o){ 
+             
+                    var that = this;
+                    this.config = o;
+                    this.control = false;
+                    this.sPos = {};
+                    this.mPos = {};
+                    this.dire;
+                    this.moveLength = 0;
+                    this.config.bind.addEventListener('touchstart', function(e){ return that.start(e); } ,false);
+                    this.config.bind.addEventListener('touchmove', function(e){ return that.move(e); } ,false);
+                    this.config.bind.addEventListener('touchend', function(e){ return that.end(e); } ,false);             
+                }             
+                LSwiperMaker.prototype.start = function(e){
+                     var point = e.touches ? e.touches[0] : e;
+                     this.sPos.x = point.screenX;
+                     this.sPos.y = point.screenY;    
+                }
+                LSwiperMaker.prototype.move = function(e){
+
+                    var This = this;
+                    var point = e.touches ? e.touches[0] : e;
+                    this.control = true;
+                    this.mPos.x = point.screenX;
+                    this.mPos.y = point.screenY;    
+                }             
+                LSwiperMaker.prototype.end = function(e){
+                    if(this.config.dire_h){
+                        if(!this.control){
+                            this.dire = null;
+                        }else{
+                            if(this.mPos.y > this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < 40){
+                                this.dire = 'D';
+                            }
+                            if(this.mPos.y < this.sPos.y && Math.abs(this.mPos.x - this.sPos.x) < 40){
+                                this.dire = 'U';
+                            }
+                            if(this.mPos.x > this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < 40){
+                                this.dire = 'R';
+                            }
+                            if(this.mPos.x < this.sPos.x && Math.abs(this.mPos.y - this.sPos.y) < 40){
+                                this.dire = 'L';
+                            }
+                        }
+                    }
+                    this.moveLength = this.mPos.y - this.sPos.y;
+             
+                    this.control = false;
+                    this.config.backfn(this);
+             
+                } 
+                window.LSwiperMaker = LSwiperMaker;
+            }())
+            
+    	</script>
+    	
+    </body>
+</html>
