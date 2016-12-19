@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>城市选择</title>
+        <script type="text/javascript" src="js/REM.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/cityPicker.css">
+    </head>
+    <body id='index'>    	
+		<div class="body">
+			<button v-on:click="showSelect()">城市</button>
+			<div>{{AddProvince +'-'+AddCity+'-'+AddZone}}</div>
+			<section class="ageSelect" v-bind:class="{show:ageSelectShow}">
+				<div class="content">
+					<p>选择地址</p>
+					<ul v-cloak>
+						<li v-for="item in arrayTitle">{{item.title}}</li>
+					</ul>
+					<span></span>
+					<div><input type="button" value="取消" class="cancle" v-on:click="cancle()"><input type="button" value="确定" class="check" v-on:click="choose()"></div>
+				</div>
+				
+			</section>
+    	</div>
+    	<script type="text/javascript" src="js/vue.min.js"></script>
+    	<script type="text/javascript" src="js/citypicker.js"></script>
+    	<script type="text/javascript" src="js/index.js"></script>
+    	<script type="text/javascript">
+    		/*if(/Android [4-6]/.test(navigator.appVersion)) {
+    			window.addEventListener("resize", function() {
+    				if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+    					window.setTimeout(function() {
+    						document.activeElement.scrollIntoViewIfNeeded();
+    					},0);
+    				}
+    			})
+    		}
+    		var selectAge = document.querySelector('span.age');	//选年龄按钮 span
+    		var selectInp = document.querySelector('span.age > input');//选年龄按钮
+    		var cancle = document.querySelector('input.cancle');	//cancle
+    		var check = document.querySelector('input.check');		//确定
+    		var ageSelect = document.querySelector('section.ageSelect');	//选择层
+    		var ul = document.querySelector('.content ul');
+    		*/
+            
+    	</script>
+    	
+    </body>
+</html>

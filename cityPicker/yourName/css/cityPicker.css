@@ -1,0 +1,79 @@
+*{
+				margin:0;padding: 0;box-sizing: border-box;
+			}
+			html,body{
+				font-family: "Microsoft Yahei";
+				height: 100%;
+				background-color: #ededed;
+			}
+			.body{
+				max-width: 640px;
+				margin:0 auto;
+				height: 100%;
+				position: relative;
+				overflow:hidden;
+				background-color: 
+			}
+			[v-cloak]{
+				display: none;
+			}
+			li{list-style: none;}
+			
+			.ageSelect{
+				top: 0;left: 0;
+				position: absolute;width: 100%;height: 100%;
+				background-color: rgba(0,0,0,.6);
+				display: none;
+			}
+			.ageSelect.show{
+				display: block;
+			}
+			.ageSelect > .content{
+				position: absolute;
+				bottom: 0;left: 0;
+				height: 10rem;width: 100%;
+				background-color: white;
+			}
+			.ageSelect > .content >p{
+				position: absolute;top: 0;left: 0;
+				line-height: 1.2rem;font-size: 0.8rem;
+				text-indent: 1rem;
+			}
+			.ageSelect > .content ul{
+				height: 10rem;overflow-y: scroll;
+				padding-bottom: 4rem;	
+
+			}
+
+			.ageSelect > .content li:nth-of-type(1){
+				margin-top: 4rem;
+			}
+			.ageSelect > .content li{
+				height: 2rem;line-height: 2rem;text-align: center;
+				font-size: 0.75rem;
+			}
+			.ageSelect > .content span{
+				position: absolute;
+				display: inline-block;
+				left: 50%;margin-left: -2.125rem;
+				top: 4rem;
+				width: 4.25rem;
+				height: 2rem;
+				border-top: 1px solid #03b6ee;
+				border-bottom: 1px solid #03b6ee;
+			}
+			.ageSelect > .content div{
+				position: absolute;
+				width: 100%;
+				height: 1rem;bottom: 0.5rem;left: 0;
+				text-align: right;
+			}
+			.ageSelect > .content div input{
+				display: inline-block;vertical-align: top;
+				font-family: "Microsoft Yahei";
+				width: 2.5rem;font-size:0.6rem;text-align: center;
+				color: #03b6ee;
+				height: 1rem;line-height: 1rem;
+				outline: none;
+				border:none;background-color: transparent;
+			}
