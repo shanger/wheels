@@ -26,7 +26,10 @@ var index =  new Vue({
 	methods:{
 		showSelect:function(){
 			this.ageSelectShow = true;			
-			
+			this.AddProvince = '';
+			this.AddCity = '';
+			this.AddZone = '';
+			this.arrayTitle = this.provincial;
 		},
 		cancle:function(){
 			this.AddProvince = '';

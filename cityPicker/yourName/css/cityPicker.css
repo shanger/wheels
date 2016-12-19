@@ -17,6 +17,14 @@
 			[v-cloak]{
 				display: none;
 			}
+			.body >input{
+				border:1px solid #f30;
+				border-radius: 5px;
+				display: inline-block;height: 1rem;line-height: 0.98rem;
+				font-size: 0.6rem;
+				width: 9rem;
+				padding-left: 0.3rem;font-family: "Microsoft Yahei";
+			}
 			li{list-style: none;}
 			
 			.ageSelect{

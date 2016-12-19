@@ -10,8 +10,7 @@
     </head>
     <body id='index'>    	
 		<div class="body">
-			<button v-on:click="showSelect()">城市</button>
-			<div>{{AddProvince +'-'+AddCity+'-'+AddZone}}</div>
+            <input type="text" v-on:click="showSelect()" placeholder="选择地址" v-model="AddProvince +''+AddCity+''+AddZone"/>
 			<section class="ageSelect" v-bind:class="{show:ageSelectShow}">
 				<div class="content">
 					<p>选择地址</p>
