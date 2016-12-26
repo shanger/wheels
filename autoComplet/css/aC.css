@@ -1,0 +1,62 @@
+.autoComp,.autoComp *{
+	margin:0;padding: 0;box-sizing: border-box;
+	font-family: "Mircosoft Yahei"
+}
+
+.autoComp{
+	width: 400px;line-height: 42px;
+	margin:50px auto;
+	border:1px solid #162EA2;
+	position: relative;
+}
+/*标签栏*/
+.spanList{
+	display: inline-block;line-height: 40px;
+	vertical-align: top;
+}
+.spanList span{
+	display: inline-block;height: 30px;vertical-align: middle;
+	line-height: 30px;
+	padding: 0 6px;
+	background-color: rgba(22,46,162,.6);
+	border-radius: 4px;
+	min-width: 60px;
+	margin-left: 4px;
+	position: relative;
+}
+.spanList span input{
+	display: inline-block;
+	position: absolute;width: 10px;height: 10px;
+	top: -4px;right: -4px;
+	background-color: #f60;
+	border:none;outline: none;
+	border-radius: 50%;
+}
+.inputBox{
+	display: inline-block;width: 100px;height: 30px;
+	vertical-align: middle;
+	border:none;outline: none;
+	background-color: transparent;
+	padding-left: 4px;
+	font-size: 20px;
+	margin-left: 4px;border-radius: 4px;
+	background-color: rgba(22,46,162,.2);
+}
+.autoComp ul{
+	position: absolute;top: 39px;left: -1px;
+	width: 400px;
+	border:1px solid #162EA2;
+	border-top: none;
+	display: none;
+}
+.autoComp ul li {
+	list-style: none;
+	height: 30px;
+	padding-left: 5px;
+	line-height: 30px;
+
+}
+.autoComp ul li:hover{
+	background-color: rgba(22,46,162,.6);
+	color: white;
+}
