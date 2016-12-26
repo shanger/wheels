@@ -48,6 +48,8 @@
 	border:1px solid #162EA2;
 	border-top: none;
 	display: none;
+	max-height: 240px;
+	overflow-y: scroll;
 }
 .autoComp ul li {
 	list-style: none;
