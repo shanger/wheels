@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>附近的人</title>
+        <link rel="stylesheet" type="text/css" href="css/commin.css">
+        <style type="text/css">
+        	ul{
+        		width: 300px;
+        		height: 300px;  
+        		margin:50px auto;
+        		background-color: black;  position: relative;    		
+        	}
+        	li{
+        		display: inline-block;width: 15px;height: 15px;
+        		background-color: #f60;
+        		position: absolute;
+        	}
+        </style>
+        <script type="text/javascript" src="js/REM.min.js"></script>
+    </head>
+    
+    <body id="domain">
+    	<div class="body">
+		  	
+            
+            <ul>
+                <li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li><li>
+                    <span class="img" style=""></span>
+                    <input type="button" class="sign">
+                </li>
+            </ul>
+            
+    	</div>
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function(){
+        		changePosition();
+				//修改位置
+				function changePosition(){
+					function getnumb(count){
+						var x = 15,y = 15;
+						var map = new Array();
+						for(var i = 0;i < x;i++){
+							for(var j = 0;j < y;j++){
+								map.push({
+									L:i,T:j
+								})
+							}
+						}
+						//碰撞检测
+						function CollisionDetection(point){
+							var point = point||{L:0,T:0};
+							var isCollision = false;
+							if(arr.length>0){
+								for(var x = 0;x < arr.length;x++){
+									if(Math.abs(point.L+1 - arr[x].L) < 1 && Math.abs(point.T+1 - arr[x].T) < 1) {
+										isCollision = true;
+										break;
+									}
+								}
+							}				
+							
+							return isCollision;
+						}
+						var arr = [],randomArr = [],random = 0;
+
+						for(var index = 0; index < count;index++){
+							random = Math.floor(Math.random()*map.length);
+							
+							if(CollisionDetection(map[random])){	//不满足条件返回重新选
+								index--;
+							}else{
+								arr[arr.length] = map[random];
+							}
+						}
+
+						return arr;
+					}
+					var group = getnumb(20);
+					$('ul li').each(function(index,ele){	
+
+						$(this).css({
+							top:group[index].L*20 + 'px',
+							left:group[index].T*20 + 'px',
+							zIndex:index
+						});
+					})
+				}
+				//换一批
+				$('.change').on('click',function(){
+					changePosition();
+				})
+				
+			})
+        </script>
+    </body>
+</html>
