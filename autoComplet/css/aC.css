@@ -49,7 +49,7 @@
 	border-top: none;
 	display: none;
 	max-height: 240px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .autoComp ul li {
 	list-style: none;
