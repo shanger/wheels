@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>cc</title> 
+        <style type="text/css">
+        body{
+            background-color: #000;
+        }
+            div{
+                width: 500px;height: 500px;
+                margin:50px auto;
+                background-color: #fff;
+                position: relative;
+                border-radius: 10px;
+            }
+            span{
+                position: absolute;
+                top: -10px;
+                right: 50px;
+                text-align: center;
+                display: inline-block;
+                width: 100px;height: 50px;
+                background-color: #1eb687;
+                line-height: 50px;
+                color: #fff;
+                border-radius: 0 0 5px 5px;
+            }
+            span:before{
+                content: '';
+                position: absolute;
+                top: 0;left: -6px;
+                width: 0;height: 0;
+                display: inline-block;
+                border-left: 3px solid;
+                border-top: 5px solid;
+                border-bottom: 5px solid;
+                border-right: 3px solid;
+                border-color: transparent #1eb687 #1eb687 transparent;
+            }
+            span:after{
+                content: '';
+                position: absolute;
+                top: 0;right:  -6px;
+                width: 0;height: 0;
+                display: inline-block;
+                border-left: 3px solid;
+                border-top: 5px solid;
+                border-bottom: 5px solid;
+                border-right: 3px solid;
+                border-color: transparent transparent #1eb687 #1eb687 ;
+            }
+        </style>     
+    </head>
+    <body id="share">
+        <div>
+        <span>css</span>
+        </div>
+    </body>
+</html>
