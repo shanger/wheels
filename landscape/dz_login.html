@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>德州扑克</title>
+        
+        <!-- <script type="text/javascript" src="js/REM.min.js"></script> -->
+        <style type="text/css">
+        *{
+			margin:0;padding: 0;box-sizing: border-box;
+		}
+        	html,body{
+        		height: 100%;width: 100%;
+        		position: relative;
+        	}
+        	.body{
+        		width: 100%;
+        		height: 100%;
+        		background: url('http://odqxl7d3r.bkt.clouddn.com/loadbg.jpg') no-repeat;
+        		background-size: cover;
+        		background-position: center;
+        		position: relative;
+        	}
+        	body .button{
+        		width:21.3%;
+        		position: absolute;
+        		right: 5%;bottom: 5%;
+        	}
+        	body .button img{
+        		width: 100%;
+        	}
+        	@media  (max-width: 640px){
+        		.body{
+        			transform-origin: 50% 50%;
+        			-webkit-transform: rotate(90deg);
+        			transform: rotate(90deg);
+        			
+        		}
+        	}
+        </style>
+    </head>
+    <body>
+	    <div class="body">
+	    	<div class='button'>
+	    		<img src="http://odqxl7d3r.bkt.clouddn.com/weiXinBtn.png"/>
+	    	</div>
+
+	    </div>
+    	<script type="text/javascript">
+			var btn = document.querySelector('.button');
+    		var _body = document.querySelector('.body')
+    		function Resize(){
+    			var conW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
+				var conH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; 
+    			if(conW < 640){
+	    			_body.style.width = conH + 'px';
+	    			_body.style.height = conW + 'px';
+	    			_body.style.transform = "rotate(90deg) translate("+((conH-conW)/2)+"px,"+((conH-conW)/2)+"px)"; 
+	    		}else{
+	    			_body.style.width = conW + 'px';
+	    			_body.style.height = conH + 'px';
+	    			_body.style.transform = '';
+	    		}
+    		}
+    		Resize();
+    		window.addEventListener('resize',Resize,false);
+    		btn.addEventListener('click',function(){
+    			if(/micromessenger/i.test(navigator.userAgent)){
+    				var appid = 'wx50a524536f5775b1',redirectUri = 'dz.52h5.cn/webWeixin.html';
+
+    				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+redirectUri+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+    			}else{
+    				alert('请在微信中打开！')
+    			}
+    		},false);
+    	</script>
+    </body>
+</html>
