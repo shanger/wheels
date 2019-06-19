@@ -14,11 +14,9 @@ function hex2rgb(hex){
     if(colorStr.length === 3){
         fColorStr = colorStr.replace(/([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/,'$1$1$2$2$3$3')
     }
-    var r,g,b
-    r = parseInt(fColorStr.slice(0,2),16)
-    g = parseInt(fColorStr.slice(2,4),16)
-    b = parseInt(fColorStr.slice(4,6),16)
-    return `rgb(${r},${g},${b})`
+    return 'rgb('+fColorStr.split(/(?:([a-fA-F0-9]{2}))/).filter(ele=>{return ele}).map(ele=>{
+        return parseInt(ele,16)
+        }).join(',')+')'
 }
 console.log(hex2rgb('#ffffff'))
 console.log(hex2rgb('#cccccc'))
